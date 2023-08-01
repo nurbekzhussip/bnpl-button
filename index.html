@@ -48,7 +48,7 @@
     <button id="bnplButton" data-value="20000"></button>
 
     <script type="text/javascript">
-      window.addEventListener("DOMContentLoaded", () => {
+      window.onload = function() { 
         const button = document.getElementById("bnplButton");
         const dataValue = button.getAttribute("data-value");
         const value = Number(dataValue);
@@ -72,7 +72,7 @@
         } else {
           button.style.display = "none";
         }
-      });
+      }
     </script>
   </body>
 </html>
