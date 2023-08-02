@@ -45,11 +45,11 @@
     </style>
   </head>
   <body>
-    <h1>version: 1.0.0</h1>
+    <h1>version: 1.0.1</h1>
     <button id="bnplButton" data-value="20000"></button>
 
     <script type="text/javascript">
-        console.log('1.0.0')
+        console.log('1.0.1')
         const button = document.getElementById("bnplButton");
         const dataValue = button.getAttribute("data-value");
         const value = Number(dataValue);
@@ -72,6 +72,20 @@
         `;
         } else {
           button.style.display = "none";
+        }
+        
+        alert(1)
+
+        window.onload = function(){
+          alert(2)
+        }
+
+        document.addEventListener("DOMContentLoaded", ()=>{
+          alert(3)
+        });
+
+        if (document.readyState != 'loading') {
+          alert(4)
         }
     </script>
   </body>
