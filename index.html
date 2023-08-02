@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <style>
-      #bnplButton {
+      .bnplButton {
         border: none;
         color: #fff;
         cursor: pointer;
@@ -29,14 +29,14 @@
         box-shadow: -2px -6px 15px 0px rgba(0, 0, 0, 0.15) inset;
       }
 
-      #bnplButton > h6 {
+      .bnplButton > h6 {
         font-size: 25px;
         font-weight: 700;
         line-height: 20px;
         margin: 0;
         margin-bottom: 10px;
       }
-      #bnplButton > p {
+      .bnplButton > p {
         font-size: 22px;
         font-weight: 500;
         line-height: 20px;
@@ -46,32 +46,48 @@
   </head>
   <body>
     <script type="text/javascript">
-        alert(1)
-        var button = document.getElementById("bnplButton");
-        var dataValue = button.getAttribute("data-value");
-        var value = Number(dataValue);
-
-        if (value < 200000) {
-          button.style.display = "block";
-          var payment = Math.ceil(value / 4);
-
-          var moneyFormatter = new Intl.NumberFormat("ru-RU", {
-            style: "currency",
-            currency: "KZT",
-            currencyDisplay: "narrowSymbol",
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 2,
-          });
-
-          button.innerHTML = `
-          <h6>Рассрочка 0-0-4</h6>
-          <p>${moneyFormatter.format(payment)} х 4 мес</p>
-        `;
-        } else {
-          button.style.display = "none";
+      alert(1)
+        window.onload = function(){
+          alert(2)
         }
+
+        document.addEventListener("DOMContentLoaded", ()=>{
+          alert(3)
+        });
+
+        if (document.readyState != 'loading') {
+          alert(4)
+        }
+
+        // var button = document.getElementById("bnplButton");
+        // var dataValue = button.getAttribute("data-value");
+
+        // if (Number(dataValue) < 200000) {
+        //   button.style.display = "block";
+        //   const payment = Math.ceil(value / 4);
+
+        //   const moneyFormatter = new Intl.NumberFormat("ru-RU", {
+        //     style: "currency",
+        //     currency: "KZT",
+        //     currencyDisplay: "narrowSymbol",
+        //     minimumFractionDigits: 0,
+        //     maximumFractionDigits: 2,
+        //   });
+
+        //   button.innerHTML = `
+        //   <h6>Рассрочка 0-0-4</h6>
+        //   <p>${moneyFormatter.format(payment)} х 4 мес</p>
+        // `;
+        // } else {
+        //   button.style.display = "none";
+        // }
     </script>
     <h1>version: 1.0.4</h1>
-    <button id="bnplButton" data-value="20000"></button>
+    <button id="bnplButton" class="bnplButton" data-value="20000"></button>
+    <button id="bnplButtonText" class="bnplButton">
+      <h6>Купить в рассрочку</h6>
+      <p>0-0-4</p>
+    </button>
+    
   </body>
 </html>
