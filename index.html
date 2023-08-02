@@ -51,17 +51,17 @@
     alert('head')
   </script>
   <body>
-    <script>
-        console.log('1.0.1')
-        const button = document.getElementById("bnplButton");
-        const dataValue = button.getAttribute("data-value");
-        const value = Number(dataValue);
+    <script type="text/javascript">
+        alert(1)
+        var button = document.getElementById("bnplButton");
+        var dataValue = button.getAttribute("data-value");
+        var value = Number(dataValue);
 
         if (value < 200000) {
           button.style.display = "block";
-          const payment = Math.ceil(value / 4);
+          var payment = Math.ceil(value / 4);
 
-          const moneyFormatter = new Intl.NumberFormat("ru-RU", {
+          var moneyFormatter = new Intl.NumberFormat("ru-RU", {
             style: "currency",
             currency: "KZT",
             currencyDisplay: "narrowSymbol",
@@ -76,24 +76,8 @@
         } else {
           button.style.display = "none";
         }
-        
-        alert(1)
-
-        window.onload = function(){
-          alert(2)
-        }
-
-        document.addEventListener("DOMContentLoaded", ()=>{
-          alert(3)
-        });
-
-        if (document.readyState != 'loading') {
-          alert(4)
-        }
     </script>
     <h1>version: 1.0.3</h1>
     <button id="bnplButton" data-value="20000"></button>
-
-    
   </body>
 </html>
