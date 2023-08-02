@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>BNPL</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <style>
-       #bnplButton {
+      #bnplButton {
         border: none;
         cursor: pointer;
         padding: 16px 28px;
@@ -48,43 +48,9 @@
     </style>
   </head>
   <body>
-    <script type="text/javascript">
-        window.onload = function(){
-          var button = document.getElementById("bnplButton");
-          var dataValue = button.getAttribute("data-value");
-          var value = Number(dataValue)
-
-          if(value <= 200000){
-            var payment = Math.ceil(value / 4);
-            button.innerHTML = `<p>Рассрочка 0-0-4</p><span>${payment}₸ х 4 мес</span>`
-          }
-        }
-
-        // 
-        //₸
-
-        // if (Number(dataValue) < 200000) {
-        //   button.style.display = "block";
-        //   const payment = Math.ceil(value / 4);
-
-        //   const moneyFormatter = new Intl.NumberFormat("ru-RU", {
-        //     style: "currency",
-        //     currency: "KZT",
-        //     currencyDisplay: "narrowSymbol",
-        //     minimumFractionDigits: 0,
-        //     maximumFractionDigits: 2,
-        //   });
-
-        //   button.innerHTML = `
-        //   <h6>Рассрочка 0-0-4</h6>
-        //   <p>${moneyFormatter.format(payment)} х 4 мес</p>
-        // `;
-        // } else {
-        //   button.style.display = "none";
-        // }
-    </script>
-    <h1>version: 1.0.7</h1>
-    <button id="bnplButton" class="bnplButton" data-value="20000"></button>
-    
+    <button class="bnplButton" id="bnplButton">
+      <p>Купить в рассрочку</p>
+      <span>0-0-4</span>
+    </button>
   </body>
 </html>
