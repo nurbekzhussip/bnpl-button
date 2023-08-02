@@ -48,19 +48,16 @@
     <script type="text/javascript">
       alert(1)
         window.onload = function(){
-          alert(2)
+          var button = document.getElementById("bnplButton");
+          var dataValue = button.getAttribute("data-value");
+
+          alert(dataValue)
+
+          button.innerHTML = `<h6>Рассрочка 0-0-4</h6>`
         }
 
-        document.addEventListener("DOMContentLoaded", ()=>{
-          alert(3)
-        });
-
-        if (document.readyState != 'loading') {
-          alert(4)
-        }
-
-        // var button = document.getElementById("bnplButton");
-        // var dataValue = button.getAttribute("data-value");
+        // 
+        //
 
         // if (Number(dataValue) < 200000) {
         //   button.style.display = "block";
@@ -82,7 +79,7 @@
         //   button.style.display = "none";
         // }
     </script>
-    <h1>version: 1.0.4</h1>
+    <h1>version: 1.0.5</h1>
     <button id="bnplButton" class="bnplButton" data-value="20000"></button>
     <button id="bnplButtonText" class="bnplButton">
       <h6>Купить в рассрочку</h6>
