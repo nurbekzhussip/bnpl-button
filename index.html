@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>BNPL</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,29 +28,27 @@
       }
 
       #bnplButton > p {
-        font-family: "Roboto", sans-serif;
+        font-family: "Roboto", sans-serif !important;
         font-size: 25px;
         font-weight: 700;
         line-height: 20px;
         margin: 0;
         margin-bottom: 10px;
-        color: #fff;
+        color: #fff !important;
       }
 
       #bnplButton > span {
-        font-family: "Roboto", sans-serif;
+        font-family: "Roboto", sans-serif !important;
         font-size: 22px;
         font-weight: 500;
         line-height: 20px;
         margin: 0;
-        color: #fff;
+        color: #fff !important;
       }
     </style>
   </head>
   <body>
-    
-    <h1>version: 1.0.7</h1>
-    <button id="bnplButton" class="bnplButton" data-value="20000"></button>
+    <button id="bnplButton" data-value="20000"></button>
     <script type="text/javascript">
         window.onload = function(){
           var button = document.getElementById("bnplButton");
