@@ -46,18 +46,29 @@
   </head>
   <body>
     <script type="text/javascript">
-      alert(1)
         window.onload = function(){
           var button = document.getElementById("bnplButton");
           var dataValue = button.getAttribute("data-value");
-
+          var value = Number(dataValue)
           alert(dataValue)
 
-          button.innerHTML = `<h6>Рассрочка 0-0-4</h6>`
+          if(value <= 200000){
+            const payment = Math.ceil(value / 4);
+            button.innerHTML = `<h6>Рассрочка 0-0-4</h6><p>${payment.toLocaleString('ru-RU', {
+  style: 'currency',
+  currency: 'KZT',
+  currencyDisplay: "narrowSymbol",
+  maximumFractionDigits:0,
+})} х 4 мес</p>`
+
+          }else{
+
+          }
+
         }
 
         // 
-        //
+        //₸
 
         // if (Number(dataValue) < 200000) {
         //   button.style.display = "block";
@@ -79,7 +90,7 @@
         //   button.style.display = "none";
         // }
     </script>
-    <h1>version: 1.0.5</h1>
+    <h1>version: 1.0.6</h1>
     <button id="bnplButton" class="bnplButton" data-value="20000"></button>
     <button id="bnplButtonText" class="bnplButton">
       <h6>Купить в рассрочку</h6>
